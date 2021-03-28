@@ -18,15 +18,20 @@
             <div id="graph1">
 			<h1>Predictive World Cup Goal Metrics</h1>
 			<h3> Color Indicates Continent > 500</h3>
+			
                     <!-- TODO: Uncomment the below lines for part 1B -->
                 <button type="button" class="btn btn-info" onclick="setG1Data('Scored')">Goals Scored</button>
                 <button type="button" class="btn btn-info" onclick="setG1Data('Given Up')">Goals Allowed</button>
 				<button type="button" class="btn btn-info" onclick="setG1Data('Ratio')">Scored-Allowed Ratio</button>
                 <!-- <div id="barplot1"></div> -->
-                <hr>
+				<hr>
+				<p>This graph shows which countries did the best in goals scored, goals allowed, and the ratio of two over the last 2 world cups</p>
 			</div>
 			<h1>Top 10 Nations by Win Pct</h1>
 			<h3> Color Indicates Number of Wins > 500</h3>
+			<p>This graph shows which countries had the highest winning percentages all time. Note, I removed teams who's number  
+				of games played fell below the threshold (which was the mean number of games played).
+			</p>
             <div id="graph2"></div><br/>
 			<!-- <div id="barplot2"></div> -->
         </div>
@@ -34,8 +39,61 @@
 			<h1>Number of Games Played</h1>
             <div id="graph3"></div>
 			<div id="scatterplot"></div>
+			<p>This scatter plot shows total number of international football games played over the range 2011 to 2020. Note the big dropoff
+			   in 2020 due to the Covid-19 pandemic. 	</p>
         </div>
     </div>
+	<div> 
+		<h1>Answers to Written Questions</h1>
+		<p> My dashboard answered the questions presented in the dashboard as follows: <br>
+			<b>Question 1:</b>Your boss wants to know the number of football games by year.<br>
+				This one was answered by the scatter plot that shows the number of games played per
+				year between 2011 and 2020. This was a fairly simple question. <br>
+			<b>Question 2:</b>Your boss wants to understand the top winning nations. 
+				We would like to see a winning percentage for the top 10 nations<br>
+				My bar plot showing winning percentages answers this question. I preprocessed the data
+				by sorting by team and summing up wins as well as games played.<br> I set the minimum number of 
+				games played to be the mean of games played across the dataset and removed any teams that fell
+				under this threshold <br>(so we didn't include teams that played few games and won at a high percentage). <br>
+			<b>Question 3:</b> Lastly, we are trying to bet on which team will win the world cup 2022<br>
+				This question is answered by the interactive bar plot displaying 3 different goal metrics. Some people
+				believe that a high powered offense wins championships, <br>so I made a barplot showing the highest scoring
+				teams over the last 2 world cups.<br> Some people, myself included, believe defense wins championships. <br>For
+				this metric I made a barplot of teams that gave up the fewest goals over the last 2 world cups. <br>
+				These two metrics are good but there is a potential for false conclusions because we don't factor in number of games 
+				played. <br>To neutralize this, I made a third metric that displays the ratio of goals scored vs allowed. 
+				Using these three metrics, we should be able to make predictions. <br>
+			<b>Why was D3 helpful?</b><br>
+				<b>1.</b> It was helpful because there was a plethora of resources and documentation available for learning it, 
+				   making me more motivated to actually implement additional functionality. <br>
+				   Especially when compared to something like SQL, this wasn't a terrible experience learning a new language<br>
+				<b>2.</b> It was a tool designed specifically for the work we were doing in this project, making it a sufficient library on it's own.<br>
+			    <b>3.</b> It is very intuitive in that every type of plot follows a similar pattern in creating and editing the figures with data. <br>
+			<b>Why wasn't D3 the best tool></b><br>
+				<b>1.</b> As someone with much more experience in Python/matlab, I think I would've been able to do far more with a library like matplotlib <br>
+				<b>2.</b> D3 is not nearly as efficient/optimized for calculating statistics compared to Pandas or Matlab <br>
+				<b>3.</b> D3 is not as helpful because it makes us create visualizations from scratch, which is not practical in a data science workplace setting<br>
+			<b>Question 4:</b> Evaluate the accessibility of your dashboard based on the readings in the “Before you begin” section. 
+				What kinds of users might find this dashboard accessible and who might have more difficulty? 
+				What additional actions might you take to make this dashboard more accessible to all audiences?<br>
+				I believe I took many steps to ensure my data dashboard was accessible to a variety of users. As we saw in the <i>Inclusive Design</i> article, it
+				helps to include whitespaces between figure elements. Notice how I did this in my bar plots. Further, I went on the given link and choose
+				colors that are easier for colorblind people to see. Also, I made sure to include alt texts for my graphs to give some additional information
+				regarding the preprocessing and the information on the figure. One thing I could've done better was to include the number of games played as a text 
+				over each scatter plot point. The fact that to get the exact number requires a hover might make it harder to work with some assistive technologies. 
+				Next time I will make sure to fix that. So, people who are colorblind (hopefully) would have an easier time using this dashboard while people 
+				using assistive technologies may not have as easy of a time. <br>
+			<b>Question 5:</b> Reflect on the stages of your design and implementation process when you could have taken steps to make your
+			dashboard more accessible to all audiences. What are some factors that kept you from taking these steps? <br>
+			I think going through my dashboard I was able to take numerous steps to make it accessible to all audiences. As I mentioned in question 4, I failed to add
+			text over each scatter plot point that would allow people using assistive technologies to avoid having to hover over the data point to get the exact value.
+			I think there are other things I could've implemented such as a legend for my coloring schemes in the bar plots. I also maybe could've added even more 
+			descriptive titles. Factors that kept me from taking these steps were definitiely time and experience. I didn't have a lot of extra time as this project
+			was already fairly intense to begin with. Further, this is my first time working with javascript so some of the additional features seemed daunting in 
+			the amount of time it'd take me to understand how to use them. 
+			
+		</p>
+	</div>
     <!--Feel free to add more JavaScript files as needed-->
     <script type="text/javascript" src="main.js"></script>
 </body>
