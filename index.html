@@ -15,11 +15,25 @@
     <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
     <div class="row">
         <div class="col-lg-6">
-            <div id="graph1"></div>
+            <div id="graph1">
+			<h1>Predictive World Cup Goal Metrics</h1>
+			<h3> Color Indicates Continent > 500</h3>
+                    <!-- TODO: Uncomment the below lines for part 1B -->
+                <button type="button" class="btn btn-info" onclick="setG1Data('Scored')">Goals Scored</button>
+                <button type="button" class="btn btn-info" onclick="setG1Data('Given Up')">Goals Allowed</button>
+				<button type="button" class="btn btn-info" onclick="setG1Data('Ratio')">Scored-Allowed Ratio</button>
+                <!-- <div id="barplot1"></div> -->
+                <hr>
+			</div>
+			<h1>Top 10 Nations by Win Pct</h1>
+			<h3> Color Indicates Number of Wins > 500</h3>
             <div id="graph2"></div><br/>
+			<!-- <div id="barplot2"></div> -->
         </div>
         <div class="col-lg-6">
+			<h1>Number of Games Played</h1>
             <div id="graph3"></div>
+			<div id="scatterplot"></div>
         </div>
     </div>
     <!--Feel free to add more JavaScript files as needed-->
